@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav a {
+    padding: 6px 8px 20px 16px;
+    text-decoration: none;
+    font-size: 13px;
+    color: #818181;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.main {
+    margin-left: 260px; /* Same as the width of the sidenav */
+    font-size: 16px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+<div class="well"></div>
+<div class="sidenav">
+<br />
+<center><img src="images/logo.png" width="100"/></center>
+<br />
+<hr />
+<br />
+	<a href="index.html"><span class="glyphicon glyphicon-triangle-right" style="color:white;"></span>&nbsp;Dashoard</a>
+
+   <a href="admin.html"><span class="glyphicon glyphicon-triangle-right" style="color:white;"></span>&nbsp;Admins</a>
+
+   <a href="customers.html"><span class="glyphicon glyphicon-triangle-right" style="color:white;"></span>&nbsp;Customers</a>
+
+   <a href="companies.html"><span class="glyphicon glyphicon-triangle-right" style="color:white;"></span>&nbsp;Companies</a>
+
+  <a href="Categories.html"><span class="glyphicon glyphicon-triangle-right" style="color:white;"></span>&nbsp;Categories</a>
+
+  <a href="subCategories.html"><span class="glyphicon glyphicon-triangle-right" style="color:white;"></span>&nbsp;SubCategories</a>
+
+   <a href="documentstype.html"><span class="glyphicon glyphicon-triangle-right" style="color:white;"></span>&nbsp;Document types</a>
+
+  <a href="products.html"><span class="glyphicon glyphicon-triangle-right" style="color:white;"></span>&nbsp;Products</a>
+
+  <a href="solutions.html"><span class="glyphicon glyphicon-triangle-right" style="color:white;"></span>&nbsp;Solutions</a>
+
+  <a href="news.html"><span class="glyphicon glyphicon-triangle-right" style="color:white;"></span>&nbsp;News</a>
+
+  <a href="#contact"><span class="glyphicon glyphicon-triangle-right" style="color:white;"></span>&nbsp;Content Management</a>
+</div>
+
+<div class="main">
+  <h2><span class="glyphicon glyphicon-menu-right"></span>&nbsp;News</h2>
+   <ul class="breadcrumb">
+    <li><a href="home">Home</a></li>
+    <li><a href="news">News</a></li>
+  </ul>
+
+  @if ($errors->any())
+      <ul>
+          @foreach ($errors->all() as $error)
+  						<li>
+  							{{$error}}
+  					  </li>
+  		     @endforeach
+      </ul>
+  @endif
+
+  <button type="button" class="btn btn-info" style="float:right;" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add</button><br /><br />
+
+   <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add New</h4>
+        </div>
+        <div class="modal-body">
+          <form action="#">
+		  <div class="form-group">
+			<label for="email">Title:</label>
+			<input type="text" class="form-control" id="email">
+		  </div>
+		  <div class="form-group">
+			<label for="email">Images:</label>
+			<input type="file" class="form-control" id="email">
+		  </div>
+		  <div class="form-group">
+			<label for="email">Paragraph:</label>
+			<textarea class="form-control" rows="12"></textarea>
+		  </div>
+		  <button type="submit" class="btn btn-default">Save</button>
+		</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+@if(!empty($alldata))
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+		<th>Image</th>
+		<th>News</th>
+		<th>Setting</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach ($alldata as $data)
+      <tr>
+        <td>{{$data-id}}</td>
+		<td style="width:20%;">made in Egypt to International Standards!</td>
+		<td><img src="images/pro.png" width="80px" ></td>
+        <td style="text-align:justify;width:50%;">
+		<p>
+		With more than 20 years of experience in filter press sales and maintenance,
+		Systems and Technology Co., under license from GTI Engineering Inc.,
+		has recently started to build filter presses locally. These units are built to U.S. specifications using
+		the highest quality components of U.S. and German manufacture. By building locally, we offer even more flexibility
+		to our customers and can tailor presses specifically to our clients’ needs. Backed by GTI’s experience in the manufacture
+		of filter presses and Systems and Technology Co.’s experience in sales and maintenance, we offer versatility in terms of
+		size and materials of construction to meet the requirements of a variety of applications, including water and wastewater treatment,
+		metal finishing, and oil and soap industries. Local assembly allows us to offer flexible design and competitive pricing,
+		thus putting the best quality product in the hands of local industries at an attractive price.
+		</p>
+		</td>
+		<td><button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-edit"></span></button></td>
+      </tr>
+      @endforeach
+    </tbody>
+  </table>
+@endif
+
+
+       <!-- Modal -->
+  <div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Edit item</h4>
+        </div>
+        <div class="modal-body">
+          <form action="#">
+		  <div class="form-group">
+			<label for="email">Title:</label>
+			<input type="text" class="form-control" id="email">
+		  </div>
+		  <div class="form-group">
+			<label for="email">Images:</label>
+			<input type="file" class="form-control" id="email">
+		  </div>
+		  <div class="form-group">
+			<label for="email">Paragraph:</label>
+			<textarea class="form-control" rows="12"></textarea>
+		  </div>
+		  <button type="submit" class="btn btn-default">Save</button>
+		</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+
+</body>
+</html>

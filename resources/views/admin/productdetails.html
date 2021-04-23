@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav a {
+    padding: 6px 8px 20px 16px;
+    text-decoration: none;
+    font-size: 13px;
+    color: #818181;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.main {
+    margin-left: 260px; /* Same as the width of the sidenav */
+    font-size: 16px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+<div class="well"></div>
+<div class="sidenav">
+<br />
+<center><img src="images/logo.png" width="100"/></center>
+<br />
+<hr />
+<br />
+	<a href="index.html"><span class="glyphicon glyphicon-triangle-right" style="color:white;"></span>&nbsp;Dashoard</a>
+
+   <a href="admin.html"><span class="glyphicon glyphicon-triangle-right" style="color:white;"></span>&nbsp;Admins</a>
+ 
+   <a href="customers.html"><span class="glyphicon glyphicon-triangle-right" style="color:white;"></span>&nbsp;Customers</a>
+  
+   <a href="companies.html"><span class="glyphicon glyphicon-triangle-right" style="color:white;"></span>&nbsp;Companies</a>
+    
+  <a href="Categories.html"><span class="glyphicon glyphicon-triangle-right" style="color:white;"></span>&nbsp;Categories</a>
+  
+  <a href="subCategories.html"><span class="glyphicon glyphicon-triangle-right" style="color:white;"></span>&nbsp;SubCategories</a>
+  
+   <a href="documentstype.html"><span class="glyphicon glyphicon-triangle-right" style="color:white;"></span>&nbsp;Document types</a>
+  
+  <a href="products.html"><span class="glyphicon glyphicon-triangle-right" style="color:white;"></span>&nbsp;Products</a>
+
+  <a href="solutions.html"><span class="glyphicon glyphicon-triangle-right" style="color:white;"></span>&nbsp;Solutions</a>
+  
+  <a href="#contact"><span class="glyphicon glyphicon-triangle-right" style="color:white;"></span>&nbsp;News</a>
+
+  <a href="#contact"><span class="glyphicon glyphicon-triangle-right" style="color:white;"></span>&nbsp;Content Management</a>
+</div>
+
+<div class="main">
+  <h2><span class="glyphicon glyphicon-menu-right"></span>&nbsp;Products Details</h2>
+  <ul class="breadcrumb">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Categories</a></li>       
+  </ul>
+<br />
+<button type="button" class="btn btn-info" style="float:right;" data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add Image</button>
+
+<button type="button" class="btn btn-info" style="float:right;margin-right:1%;" data-toggle="modal" data-target="#myModal5"><span class="glyphicon glyphicon-edit"></span>&nbsp;Edit Image</button><br /><br />
+
+<button type="button" class="btn btn-info" style="float:right;" data-toggle="modal" data-target="#myModal4"><span class="glyphicon glyphicon-edit"></span>&nbsp;Edit Product Data</button><br /><br />
+
+<br />
+ <!-- Modal -->
+  <div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog">
+<!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add Image</h4>
+        </div>
+        <div class="modal-body">
+          <form action="#">
+		  <div class="form-group">
+			<label for="email">Upload image:</label>
+			<input type="file" class="form-control" id="email">
+		  </div>
+		  <button type="submit" class="btn btn-default">Save</button>
+		</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+</div>
+  </div>
+  
+  
+     <!-- Modal -->
+  <div class="modal fade" id="myModal4" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Edit product</h4>
+        </div>
+        <div class="modal-body">
+          <form action="#">
+		  <div class="form-group">
+			<label for="email">Category:</label>
+			<select class="form-control" >
+			<option>Pump</option>
+			<option>Filter</option>
+			</select>
+		  </div>
+		  <div class="form-group">
+			<label for="email">Sub-Category:</label>
+			<select class="form-control" >
+			<option>Horizontal</option>
+			<option>Vertical</option>
+			</select>
+		  </div>
+		  <div class="form-group">
+			<label for="email">Title:</label>
+			<input type="text" class="form-control" id="email">
+		  </div>
+		  <div class="form-group">
+			<label for="pwd">Description:</label>
+			<textarea rows="5" class="form-control"></textarea>
+		  </div>
+		  <button type="submit" class="btn btn-default">Edit</button>
+		</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  
+   <!-- Modal -->
+  <div class="modal fade" id="myModal5" role="dialog">
+    <div class="modal-dialog">
+<!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Edit Image</h4>
+        </div>
+        <div class="modal-body">
+          <form action="#">
+		  <div class="form-group">
+		  <div class="row">
+		   <div class="col-sm-4">
+		   <center>
+		   <img src="images/pro.png" alt="Los Angeles" width="100px">
+		   <button type="button" class="btn btn-danger">
+          <span class="glyphicon glyphicon-remove"></span>  
+        </button>
+		</center>
+		</div>
+		<div class="col-sm-8">
+			<label for="email">Upload image:</label>
+			<input type="file" class="form-control" id="email">
+		  </div>
+		  </div>
+		  </div>
+		  <hr />
+		  <div class="form-group">
+		  <div class="row">
+		   <div class="col-sm-4">
+		   <center>
+		   <img src="images/pro.png" alt="Los Angeles" width="100px">
+		   <button type="button" class="btn btn-danger">
+          <span class="glyphicon glyphicon-remove"></span>  
+        </button>
+		</center>
+		</div>
+		<div class="col-sm-8">
+			<label for="email">Upload image:</label>
+			<input type="file" class="form-control" id="email">
+		  </div>
+		  </div>
+		  </div>
+		   <hr />
+		  <div class="form-group">
+		  <div class="row">
+		   <div class="col-sm-4">
+		   <center>
+		   <img src="images/pro.png" alt="Los Angeles" width="100px">
+		   <button type="button" class="btn btn-danger">
+          <span class="glyphicon glyphicon-remove"></span>  
+        </button>
+		</center>
+		</div>
+		<div class="col-sm-8">
+			<label for="email">Upload image:</label>
+			<input type="file" class="form-control" id="email">
+		  </div>
+		  </div>
+		  </div>
+		   <hr />
+		  <div class="form-group">
+		  <div class="row">
+		   <div class="col-sm-4">
+		   <center>
+		   <img src="images/pro.png" alt="Los Angeles" width="100px">
+		   <button type="button" class="btn btn-danger">
+          <span class="glyphicon glyphicon-remove"></span>  
+        </button>
+		</center>
+		</div>
+		<div class="col-sm-8">
+			<label for="email">Upload image:</label>
+			<input type="file" class="form-control" id="email">
+		  </div>
+		  </div>
+		  </div>
+		  
+		  <button type="submit" class="btn btn-default" style="float:right;">Update</button><br /><br />
+		</form>
+        </div>
+      </div>
+</div>
+  </div>
+  
+  
+  
+<div class="row">
+  <div class="col-sm-3">
+   <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="images/pro.png" alt="Los Angeles" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="images/pro.png" alt="Chicago" style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img src="images/pro.png" alt="New york" style="width:100%;">
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  </div>
+  <div class="col-sm-4">
+  <p>Name: Pump</p>
+  <p style="text-align:justify;">Description: Seal-less, bearing-free pumps constructed of CPVC, PVDF, and polypropylene. 
+  Used for high temperature chemical service, fume scrubbers, plating, 
+  printed circuit board manufacturing and waste solution transfer.</p>
+  
+  </div>
+</div>
+<hr />
+<div class="row">
+<div class="col-sm-8">
+
+<button type="button" class="btn btn-info" style="float:right;" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add Document</button><br /><br />
+
+ <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+<!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add Document</h4>
+        </div>
+        <div class="modal-body">
+          <form action="#">
+		  <div class="form-group">
+			<label for="email">Document Type:</label>
+			<select class="form-control" >
+			<option>Technical Document</option>
+			<option>Specifications Document</option>
+			</select>
+		  </div>
+		  <div class="form-group">
+			<label for="email">Upload Document:</label>
+			<input type="file" class="form-control" id="email">
+		  </div>
+		  <button type="submit" class="btn btn-default">Save</button>
+		</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+</div>
+  </div>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Document</th>
+        <th>Type</th>
+		<th>Settings</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td><a href="documents/Website Documentation SAT.pdf"> O-0876 Dental Amalgam Filter.pdf</a></td>
+        <td>Technical Document</td>
+		<td><button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal3"><span class="glyphicon glyphicon-edit"></span></button></td>
+      </tr>
+    </tbody>
+  </table>
+  
+   <!-- Modal -->
+  <div class="modal fade" id="myModal3" role="dialog">
+    <div class="modal-dialog">
+<!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Edit Document</h4>
+        </div>
+        <div class="modal-body">
+          <form action="#">
+		  <div class="form-group">
+			<label for="email">Document Type:</label>
+			<select class="form-control" >
+			<option>Technical Document</option>
+			<option>Specifications Document</option>
+			</select>
+		  </div>
+		  <div class="form-group">
+			<label for="email">Upload Document:</label>
+			<input type="file" class="form-control" id="email">
+		  </div>
+		  <button type="submit" class="btn btn-default">Edit</button>
+		</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+</div>
+  </div>
+  
+  
+</div>
+  </div>
+  </div>
+     
+</body>
+</html> 
